@@ -33,10 +33,10 @@ const FoodItem = ({ name, description, id, imageUrl, price }) => {
           </div>
         </div>
         <div className="card-footer d-flex justify-content-between bg-light">
-              <button
-                className="btn btn-primary btn-sm">
+              <Link
+                className="btn btn-primary btn-sm" to={`/food/${id}`}>
                 View Food
-              </button>
+              </Link>
             <button
               className="btn btn-outline-secondary btn-sm"
             >
