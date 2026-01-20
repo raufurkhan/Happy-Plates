@@ -21,12 +21,22 @@ const [foodList, setFoodList] = useState([]);
     
    };
 
+ const removeFromCart = (foodId) => {
+    setQuantities((prevQuantities) => {
+      const updatedQuantitites = { ...prevQuantities };
+      delete updatedQuantitites[foodId];
+      return updatedQuantitites;
+    });
+  };
+
+
 
 const contextValue = {
     foodList,
     increaseQty,
     decreaseQty,
-    quantities
+    quantities,
+    removeFromCart
   };
 
 useEffect(()=>{
