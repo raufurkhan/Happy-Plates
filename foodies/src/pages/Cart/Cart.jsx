@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import "./Cart.css";
-import { Link} from "react-router-dom";
+import { useNavigate,Link} from "react-router-dom";
 import { calculateCartTotals } from "../../util/cartUtils";
 
 const Cart = () => {
- 
+  const navigate = useNavigate();
   const { foodList, increaseQty, decreaseQty, quantities, removeFromCart } =
     useContext(StoreContext);
   //cart items
@@ -116,7 +116,7 @@ const Cart = () => {
               <button
                 className="btn btn-primary w-100"
                 disabled={cartItems.length === 0}
-                
+                onClick={() => navigate("/order")}
               >
                 Proceed to Checkout
               </button>

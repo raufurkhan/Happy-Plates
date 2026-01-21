@@ -5,7 +5,7 @@ import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 const Menubar = () => {
-
+const [active, setActive] = useState("home");
    const {quantities} =
       useContext(StoreContext);
     const uniqueItemsInCart = Object.values(quantities).filter(
@@ -23,14 +23,20 @@ const Menubar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link" aria-current="page" to="/">Home</Link>
+          <Link className={
+                  active === "home" ? "nav-link fw-bold active" : "nav-link"
+                }  to="/" onClick={() => setActive("home")}>Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/explore">Explore</Link>
+          <Link className={
+                  active === "explore" ? "nav-link fw-bold active" : "nav-link"
+                } to="/explore" onClick={() => setActive("explore")}>Explore</Link>
         </li>
       
           <li className="nav-item">
-          <Link className="nav-link" to="/contact">Contact us</Link>
+          <Link className={active === "contact-us"
+                    ? "nav-link fw-bold active"
+                    : "nav-link"} to="/contact" onClick={() => setActive("contact-us")}>Contact us</Link>
         </li>
             
         
