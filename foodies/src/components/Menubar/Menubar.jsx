@@ -49,7 +49,7 @@ const navigate = useNavigate();
         </div>
         </Link>
         <button className='btn btn-outline-primary'  onClick={() => navigate("/login")}>Login</button>
-         <button className='btn btn-outline-primary'  onClick={() => navigate("/register")}>Success</button>
+         <button className='btn btn-outline-primary'  onClick={() => navigate("/register")}>Register</button>
     </div>
     </div>
   </div>
